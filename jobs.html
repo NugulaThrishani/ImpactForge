@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Jobs — OpportuMap</title>
+  <meta name="description" content="Browse jobs matched to your skills. Remote, in-person, and hybrid roles for refugees and displaced persons across technology, healthcare, education, and more." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/jobs.css" />
+</head>
+<body>
+  <div class="bg-mesh"></div>
+  <div id="toast-container"></div>
+
+  <!-- ─── Navigation ─────────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="OpportuMap home">
+        <span class="logo-icon">🗺️</span>
+        <span class="logo-text">OpportuMap</span>
+      </a>
+      <ul class="navbar__nav" id="mobile-nav" role="list">
+        <li><a href="jobs.html"      class="navbar__link" id="nav-jobs">Find Jobs</a></li>
+        <li><a href="resources.html" class="navbar__link" id="nav-resources">Resources</a></li>
+        <li><a href="mentors.html"   class="navbar__link" id="nav-mentors">Mentors</a></li>
+        <li><a href="stories.html"   class="navbar__link" id="nav-stories">Stories</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="profile.html" class="btn btn--outline btn--sm" id="nav-profile-btn">My Profile</a>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── Page Header ────────────────────────────────────────── -->
+  <header class="page-header jobs-header" aria-label="Jobs board header">
+    <div class="container">
+      <div class="section-label" data-animate>Opportunities</div>
+      <h1 data-animate>Find work that values <span class="highlight">your skills</span></h1>
+      <p data-animate>Browse hundreds of positions across remote and local roles, matched to what you actually know how to do.</p>
+
+      <!-- Main Search Bar -->
+      <div class="jobs-search-bar card" data-animate>
+        <div class="jobs-search-bar__field">
+          <span class="icon">🔍</span>
+          <input type="text" id="search-input" class="input" placeholder="Job title, skill, or keyword..." aria-label="Search jobs" />
+        </div>
+        <div class="jobs-search-bar__divider"></div>
+        <div class="jobs-search-bar__field">
+          <span class="icon">📍</span>
+          <input type="text" id="location-input" class="input" placeholder="Location or 'Remote'..." aria-label="Search by location" />
+        </div>
+        <button class="btn btn--primary" id="search-btn">Search Jobs</button>
+      </div>
+
+      <!-- Quick Filters -->
+      <div class="quick-filters" data-animate>
+        <button class="quick-filter active" data-filter="all" id="qf-all">All Jobs</button>
+        <button class="quick-filter" data-filter="remote" id="qf-remote">🌐 Remote</button>
+        <button class="quick-filter" data-filter="urgent" id="qf-urgent">🔥 Urgent Hiring</button>
+        <button class="quick-filter" data-filter="fulltime" id="qf-fulltime">Full-time</button>
+        <button class="quick-filter" data-filter="parttime" id="qf-parttime">Part-time</button>
+        <button class="quick-filter" data-filter="freelance" id="qf-freelance">Freelance</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── Main Content ───────────────────────────────────────── -->
+  <main class="jobs-main">
+    <div class="container jobs-layout">
+
+      <!-- ── Sidebar Filters ─── -->
+      <aside class="jobs-sidebar" aria-label="Filter jobs">
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Skill Match</h3>
+          <p class="text-faint text-xs mb-3">Select your skills to see matching jobs highlighted</p>
+          <div class="skill-tags-container" id="skill-filter-tags">
+            <!-- Populated by JS -->
+          </div>
+          <button class="btn btn--ghost btn--sm mt-3" id="clear-skills-btn">Clear Skills</button>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Category</h3>
+          <div id="category-filters">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Work Mode</h3>
+          <div id="mode-filters">
+            <label class="checkbox-wrap" for="mode-all">
+              <input type="radio" name="mode" id="mode-all" value="" checked> All modes
+            </label>
+            <label class="checkbox-wrap mt-2" for="mode-remote">
+              <input type="radio" name="mode" id="mode-remote" value="Remote"> 🌐 Remote
+            </label>
+            <label class="checkbox-wrap mt-2" for="mode-inperson">
+              <input type="radio" name="mode" id="mode-inperson" value="In-person"> 🏢 In-person
+            </label>
+            <label class="checkbox-wrap mt-2" for="mode-hybrid">
+              <input type="radio" name="mode" id="mode-hybrid" value="Hybrid"> 🔀 Hybrid
+            </label>
+          </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Job Type</h3>
+          <div id="type-filters">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <button class="btn btn--outline" style="width:100%;" id="reset-filters-btn">Reset All Filters</button>
+      </aside>
+
+      <!-- ── Job Listings ─── -->
+      <section class="jobs-results" aria-label="Job listings">
+        <div class="jobs-results__header">
+          <div>
+            <span id="results-count" class="results-count">22 jobs found</span>
+            <span class="text-faint text-sm" id="match-label"></span>
+          </div>
+          <div class="flex gap-3 items-center">
+            <select class="input" id="sort-select" style="width:auto;" aria-label="Sort jobs">
+              <option value="newest">Newest First</option>
+              <option value="urgent">Urgent First</option>
+              <option value="match">Best Match</option>
+            </select>
+            <div class="view-toggle">
+              <button class="view-btn active" id="view-grid" aria-label="Grid view" title="Grid view">⊞</button>
+              <button class="view-btn" id="view-list" aria-label="List view" title="List view">☰</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Match Banner (shown when skills selected) -->
+        <div class="match-banner" id="match-banner" style="display:none;" role="status">
+          <span>✨ Showing skill-matched jobs first</span>
+          <button class="btn btn--ghost btn--sm" id="clear-match-btn">Clear</button>
+        </div>
+
+        <!-- Jobs Grid -->
+        <div class="jobs-grid" id="jobs-container" role="list">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state" style="display:none;">
+          <div class="empty-icon">🔍</div>
+          <h3>No jobs found</h3>
+          <p class="text-muted">Try adjusting your search or filters.</p>
+          <button class="btn btn--primary mt-4" id="empty-reset-btn">Reset Filters</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ─── Job Detail Modal ────────────────────────────────────── -->
+  <div class="modal-overlay" id="job-modal" role="dialog" aria-modal="true" aria-labelledby="modal-job-title">
+    <div class="modal job-modal">
+      <div class="job-modal__header">
+        <div class="job-modal__icon" id="modal-icon"></div>
+        <div style="flex:1">
+          <h2 id="modal-job-title" class="heading-md"></h2>
+          <div class="text-muted" id="modal-company"></div>
+        </div>
+        <button class="modal-close btn btn--ghost btn--sm" id="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="flex gap-2 wrap mt-3" id="modal-badges"></div>
+      <div class="divider"></div>
+      <p class="text-muted" id="modal-description" style="line-height:1.8;"></p>
+      <div class="mt-4">
+        <div class="sidebar-title mb-3">Required Skills</div>
+        <div class="flex gap-2 wrap" id="modal-skills"></div>
+      </div>
+      <div class="mt-4 flex items-center justify-between">
+        <div>
+          <div class="text-faint text-xs">Salary</div>
+          <div class="text-accent font-bold" id="modal-salary" style="font-size:1.1rem;"></div>
+        </div>
+        <div class="flex gap-3">
+          <button class="btn btn--outline" id="modal-save-btn">☆ Save Job</button>
+          <button class="btn btn--primary" id="modal-apply-btn">Apply Now →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Footer ─────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="navbar__logo">
+            <span class="logo-icon">🗺️</span>
+            <span class="logo-text">OpportuMap</span>
+          </div>
+          <p>Connecting displaced people with dignified work, essential resources, and mentors who care.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Opportunities</h4>
+          <ul class="footer__links">
+            <li><a href="jobs.html">Find Jobs</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <ul class="footer__links">
+            <li><a href="mentors.html">Find Mentors</a></li>
+            <li><a href="stories.html">Success Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Account</h4>
+          <ul class="footer__links">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="profile.html#saved">Saved Jobs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 OpportuMap · Built for ImpactForge Hackathon</span>
+        <span>Made with ❤️ for people who deserve better</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/jobs.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>

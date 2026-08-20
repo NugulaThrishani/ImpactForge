@@ -1,0 +1,139 @@
+/* ============================================================
+   OpportuMap — Mentors Page Styles
+   ============================================================ */
+
+.mentor-filter-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.mentor-filter-bar .input { font-size: 0.88rem; }
+
+/* ─── Mentors Grid ───────────────────────────────────────────── */
+.mentors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+/* ─── Mentor Card ────────────────────────────────────────────── */
+.mentor-card {
+  padding: 24px;
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+  position: relative;
+}
+
+.mentor-card.unavailable { opacity: 0.65 !important; }
+
+.mentor-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.mentor-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  color: white;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.mentor-available-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-bg-2);
+}
+
+.mentor-available-dot.available  { background: var(--clr-accent); }
+.mentor-available-dot.unavailable { background: var(--clr-text-3); }
+
+.mentor-card__name { font-size: 1rem; font-weight: 700; }
+.mentor-card__role { font-size: 0.82rem; color: var(--clr-text-2); }
+.mentor-card__company { font-size: 0.78rem; color: var(--clr-text-3); }
+
+.mentor-card__rating {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.mentor-rating-val { font-size: 0.9rem; font-weight: 700; color: var(--clr-gold); }
+.mentor-sessions { font-size: 0.72rem; color: var(--clr-text-3); }
+
+.mentor-bio {
+  font-size: 0.83rem;
+  color: var(--clr-text-2);
+  line-height: 1.65;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mentor-expertise {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.mentor-langs {
+  font-size: 0.78rem;
+  color: var(--clr-text-3);
+  margin-bottom: 14px;
+}
+
+.mentor-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--clr-border);
+}
+
+.mentor-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.mentor-status.available  { color: var(--clr-accent); }
+.mentor-status.unavailable { color: var(--clr-text-3); }
+
+/* ─── Become a Mentor Section ────────────────────────────────── */
+.become-mentor {
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .become-mentor { grid-template-columns: 1fr; }
+}
+
+.become-mentor__content { padding-top: 8px; }
+.become-mentor__content .text-muted { line-height: 1.7; }
+
+.mentor-signup-form { /* inherits global styles */ }

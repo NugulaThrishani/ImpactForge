@@ -1,0 +1,102 @@
+// ============================================================
+//  OpportuMap — Stories Data
+// ============================================================
+
+const STORIES_DATA = [
+  {
+    id: 's-001',
+    name: 'Fatima Z.',
+    initials: 'FZ',
+    from: 'Damascus, Syria',
+    to: 'Vienna, Austria',
+    profession: 'Registered Nurse',
+    category: 'Healthcare',
+    color: '#FF6B6B',
+    headline: 'From Syrian hospital to Vienna clinic — my credential recognition journey',
+    story: `I trained as a nurse in Damascus for 8 years. When I arrived in Vienna as a refugee in 2022, I was told my qualifications "might not transfer." I almost gave up on nursing entirely.\n\nA social worker told me about OpportuMap. I found a mentor — Florence, a nurse who had gone through the exact same process in London — and she walked me through every step. I also found the EuroHealth Network job listing that specifically supported credential recognition.\n\nFour months later, I was studying for my Austrian nursing assessment. Eight months after that, I passed. I started working full-time at a Vienna clinic in March 2025. My patients thank me. My family is proud. And I feel like myself again.\n\nIf you're an internationally trained healthcare worker — don't give up. Your skills are real. This platform helped me prove it.`,
+    likes: 284,
+    date: 'March 2025',
+    outcome: 'Now a licensed nurse in Austria',
+    tags: ['Healthcare', 'Credential Recognition', 'Germany']
+  },
+  {
+    id: 's-002',
+    name: 'Karim A.',
+    initials: 'KA',
+    from: 'Aleppo, Syria',
+    to: 'Remote (Berlin-based)',
+    profession: 'Frontend Developer',
+    category: 'Technology',
+    color: '#7C6FFF',
+    headline: 'I taught myself JavaScript in a refugee camp. OpportuMap helped me turn that into a remote job.',
+    story: `I learned JavaScript from YouTube videos on a borrowed phone while in a refugee camp in Greece. No mentor, no degree, just a deep belief that code could change my situation.\n\nWhen I arrived in Germany, I had real skills but no way to prove them. Job applications kept getting rejected — I later found out it was because my resume didn't fit the local format.\n\nI found OpportuMap and connected with David, a Google PM, who completely redesigned my resume and coached me through two mock interviews. I also found the "Junior Software Developer" listing at TechBridge, which specifically valued people from non-traditional backgrounds.\n\nI got the job in week three. Fully remote, great team, fair pay. My manager doesn't care where I came from — only what I can build. And I can build a lot.`,
+    likes: 391,
+    date: 'January 2025',
+    outcome: 'Employed as Frontend Developer at TechBridge',
+    tags: ['Technology', 'Self-taught', 'Remote Work']
+  },
+  {
+    id: 's-003',
+    name: 'Maria M.',
+    initials: 'MM',
+    from: 'Kyiv, Ukraine',
+    to: 'Toronto, Canada',
+    profession: 'Social Services Coordinator',
+    category: 'Social Work',
+    color: '#00D4AA',
+    headline: 'OpportuMap found me emergency housing AND a job — in the same week.',
+    story: `I arrived in Toronto in May 2024 with my two children. We had nowhere to stay and I didn't know where to start.\n\nI found OpportuMap through a community Facebook group. Within one hour of using the Resources tab, I found an emergency housing hotline that got us placed the same day. I also found a food bank three minutes from where we were staying.\n\nOnce we were stable, I started looking at the Jobs section. I'm a trained social worker back in Ukraine. I connected with Yusuf, a career mentor, who helped me understand how Canadian social services work and how to frame my international experience.\n\nThree weeks later, I had an interview. Four weeks after that, I started as a Social Services Coordinator at a nonprofit. My English is still improving — but my work speaks for itself.`,
+    likes: 247,
+    date: 'July 2024',
+    outcome: 'Social Services Coordinator in Toronto',
+    tags: ['Canada', 'Social Work', 'Emergency Resources', 'Family']
+  },
+  {
+    id: 's-004',
+    name: 'Amara D.',
+    initials: 'AD',
+    from: 'Freetown, Sierra Leone',
+    to: 'London, UK',
+    profession: 'IT Support Technician',
+    category: 'Technology',
+    color: '#FFD700',
+    headline: 'No formal IT degree. Found a job anyway. Here\'s how.',
+    story: `Back in Sierra Leone, I worked at a tech repair shop for 6 years. I could fix anything — laptops, phones, servers. But I had no formal certificate, just experience.\n\nIn London, everyone seemed to want certifications I didn't have. I was worried my experience would count for nothing.\n\nOpportuMap showed me the HelpDesk Heroes listing, which mentioned "study support for motivated candidates." I applied. During the interview, I described what I'd actually done — the systems I'd maintained, the problems I'd solved. They offered me the role on the spot.\n\nThey're also paying for me to do the CompTIA A+ certification while I work. I'm being paid to get certified. That felt impossible six months ago.`,
+    likes: 178,
+    date: 'April 2025',
+    outcome: 'IT Support Tech + CompTIA A+ in progress',
+    tags: ['Technology', 'UK', 'Self-taught', 'No Degree']
+  },
+  {
+    id: 's-005',
+    name: 'Rania H.',
+    initials: 'RH',
+    from: 'Baghdad, Iraq',
+    to: 'Berlin, Germany',
+    profession: 'Language Interpreter',
+    category: 'Language',
+    color: '#FF6B6B',
+    headline: 'My Arabic became my superpower, not a barrier.',
+    story: `When I first arrived in Germany, people told me my Arabic accent was a problem. That my language background made me "less qualified." I started to believe them.\n\nA volunteer at a local refugee center showed me OpportuMap. I found the Interpreter role at GlobalBridge almost immediately. I applied that same day.\n\nThe interview was different from anything I'd expected. They asked me about my language experience, my community knowledge, my empathy. All the things I'd been told didn't matter actually mattered.\n\nI've now been working as an interpreter for 14 months. I help families navigate hospitals, courts, and schools. Every day I use the language that someone once told me was a problem. Now it's the reason I'm hired.`,
+    likes: 213,
+    date: 'September 2024',
+    outcome: 'Full-time Interpreter at GlobalBridge NGO',
+    tags: ['Language', 'Interpretation', 'Germany', 'Arabic']
+  },
+  {
+    id: 's-006',
+    name: 'Dawit G.',
+    initials: 'DG',
+    from: 'Addis Ababa, Ethiopia',
+    to: 'Toronto, Canada',
+    profession: 'Chef & Co-op Member',
+    category: 'Hospitality',
+    color: '#00D4AA',
+    headline: 'From cooking for survival to co-owning a restaurant kitchen.',
+    story: `I cooked professionally for 12 years in Ethiopia. In Toronto, I couldn't get any kitchen job beyond "dishwasher" because I didn't have Canadian credentials.\n\nA friend told me about OpportuMap. I found the StitchForward listing — actually, I looked for something similar in food. But what really helped was my mentor, Carlos, a restaurant owner in Lisbon who understood exactly what I was dealing with.\n\nHe helped me frame my years of professional cooking as genuine expertise. Helped me find a worker-owned culinary cooperative in Toronto looking for someone with traditional African cooking knowledge.\n\nI've been a full member of the co-op for six months now. We serve 200+ people a week. My recipes are on the menu. My name is on the wall.`,
+    likes: 152,
+    date: 'February 2025',
+    outcome: 'Co-op member chef, Toronto',
+    tags: ['Hospitality', 'Canada', 'Mentorship', 'Culinary']
+  }
+];

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Stories — OpportuMap</title>
+  <meta name="description" content="Real stories of refugees and displaced people who found jobs, housing, and opportunity through OpportuMap. Get inspired." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/stories.css" />
+</head>
+<body>
+  <div class="bg-mesh"></div>
+  <div id="toast-container"></div>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo"><span class="logo-icon">🗺️</span><span class="logo-text">OpportuMap</span></a>
+      <ul class="navbar__nav" id="mobile-nav" role="list">
+        <li><a href="jobs.html"      class="navbar__link">Find Jobs</a></li>
+        <li><a href="resources.html" class="navbar__link">Resources</a></li>
+        <li><a href="mentors.html"   class="navbar__link">Mentors</a></li>
+        <li><a href="stories.html"   class="navbar__link">Stories</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="profile.html" class="btn btn--outline btn--sm">My Profile</a>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header" aria-label="Stories header">
+    <div class="container">
+      <div class="section-label" data-animate>Real People, Real Change</div>
+      <h1 data-animate>Stories of <span class="highlight">real impact</span></h1>
+      <p data-animate>These are real journeys. Real people who started where you might be right now — and found a way forward.</p>
+    </div>
+  </header>
+
+  <main style="padding-bottom:80px;">
+    <div class="container">
+
+      <!-- Filter -->
+      <div class="stories-filters" data-animate>
+        <button class="stories-filter-btn active" data-cat="All" id="sf-all">All Stories</button>
+        <button class="stories-filter-btn" data-cat="Healthcare" id="sf-health">🏥 Healthcare</button>
+        <button class="stories-filter-btn" data-cat="Technology" id="sf-tech">💻 Technology</button>
+        <button class="stories-filter-btn" data-cat="Social Work" id="sf-social">🌍 Social Work</button>
+        <button class="stories-filter-btn" data-cat="Language" id="sf-lang">🗣️ Language</button>
+        <button class="stories-filter-btn" data-cat="Hospitality" id="sf-hosp">🍽️ Hospitality</button>
+      </div>
+
+      <!-- Stories List -->
+      <div id="stories-container" role="list"></div>
+
+      <!-- Share Your Story -->
+      <section class="share-story card" id="share-story" aria-labelledby="share-story-heading" data-animate>
+        <div class="share-story__inner">
+          <div class="share-story__text">
+            <h2 id="share-story-heading" class="heading-md">Your story matters too</h2>
+            <p class="text-muted mt-3">If OpportuMap helped you find a job, a resource, or a mentor — we'd love to share your journey. Your story could be the one that inspires someone else to take the first step.</p>
+          </div>
+          <form id="story-form" class="story-form" novalidate>
+            <div class="grid-2 gap-4">
+              <div class="input-group">
+                <label for="story-name">Your Name (or initials)</label>
+                <input type="text" id="story-name" class="input" placeholder="e.g. Fatima Z." required />
+              </div>
+              <div class="input-group">
+                <label for="story-journey">Your journey</label>
+                <input type="text" id="story-journey" class="input" placeholder="e.g. Kabul → Berlin" />
+              </div>
+            </div>
+            <div class="input-group mt-4">
+              <label for="story-headline">Headline for your story</label>
+              <input type="text" id="story-headline" class="input" placeholder="e.g. I found my first remote job through OpportuMap" required />
+            </div>
+            <div class="input-group mt-4">
+              <label for="story-text">Your story</label>
+              <textarea id="story-text" class="input" rows="6" placeholder="Tell us what happened. What was your situation, what did you find on OpportuMap, and what changed?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg mt-4" id="submit-story-btn" style="width:100%;">
+              ✍️ Share My Story
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><div class="navbar__logo"><span class="logo-icon">🗺️</span><span class="logo-text">OpportuMap</span></div><p>Free, always.</p></div>
+        <div class="footer__col"><h4>Navigation</h4><ul class="footer__links"><li><a href="jobs.html">Jobs</a></li><li><a href="resources.html">Resources</a></li><li><a href="mentors.html">Mentors</a></li></ul></div>
+        <div class="footer__col"><h4>Account</h4><ul class="footer__links"><li><a href="profile.html">My Profile</a></li></ul></div>
+        <div class="footer__col"><h4>About</h4><ul class="footer__links"><li><a href="index.html">Home</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 OpportuMap · ImpactForge Hackathon</span><span>Made with ❤️</span></div>
+    </div>
+  </footer>
+
+  <script src="data/stories.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/stories.js"></script>
+</body>
+</html>

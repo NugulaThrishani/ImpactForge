@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Mentors — OpportuMap</title>
+  <meta name="description" content="Connect with volunteer mentors who can guide your career, help you navigate a new country, and support your journey." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/mentors.css" />
+</head>
+<body>
+  <div class="bg-mesh"></div>
+  <div id="toast-container"></div>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo"><span class="logo-icon">🗺️</span><span class="logo-text">OpportuMap</span></a>
+      <ul class="navbar__nav" id="mobile-nav" role="list">
+        <li><a href="jobs.html"      class="navbar__link">Find Jobs</a></li>
+        <li><a href="resources.html" class="navbar__link">Resources</a></li>
+        <li><a href="mentors.html"   class="navbar__link">Mentors</a></li>
+        <li><a href="stories.html"   class="navbar__link">Stories</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="profile.html" class="btn btn--outline btn--sm">My Profile</a>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header" aria-label="Mentors header">
+    <div class="container">
+      <div class="section-label" data-animate>Human Connection</div>
+      <h1 data-animate>Meet your <span class="highlight">mentor</span></h1>
+      <p data-animate>Our volunteer mentors are professionals donating their time to help you navigate your career, credentials, and a new country. Completely free.</p>
+      <div class="mentor-filter-bar" data-animate>
+        <input type="text" id="mentor-search" class="input" placeholder="🔍  Search by name, expertise, or language..." aria-label="Search mentors" style="max-width:480px;" />
+        <select id="mentor-expertise-filter" class="input" style="width:auto;" aria-label="Filter by expertise">
+          <option value="">All Expertise</option>
+        </select>
+        <select id="mentor-lang-filter" class="input" style="width:auto;" aria-label="Filter by language">
+          <option value="">All Languages</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-bottom:80px;">
+    <div class="container">
+      <div class="flex items-center justify-between mb-5">
+        <span id="mentor-count" class="results-count" style="font-size:1rem; font-weight:700;"></span>
+        <div class="flex gap-3 items-center">
+          <label class="checkbox-wrap" for="available-only">
+            <input type="checkbox" id="available-only"> Available only
+          </label>
+        </div>
+      </div>
+      <div class="mentors-grid" id="mentors-grid" role="list"></div>
+      <div class="empty-state" id="mentor-empty" style="display:none;">
+        <div class="empty-icon">🤝</div>
+        <h3>No mentors found</h3>
+        <p class="text-muted">Try a different search or filter.</p>
+      </div>
+
+      <!-- Become a Mentor Section -->
+      <section class="become-mentor card" id="become-mentor" aria-labelledby="become-mentor-heading" data-animate>
+        <div class="become-mentor__content">
+          <h2 id="become-mentor-heading" class="heading-md">Become a volunteer mentor</h2>
+          <p class="text-muted mt-3">If you have skills, experience, or knowledge that could help someone starting fresh — we'd love to have you. No minimum time commitment. Any background welcome.</p>
+        </div>
+        <form id="mentor-signup-form" class="mentor-signup-form" novalidate>
+          <div class="grid-2 gap-4">
+            <div class="input-group">
+              <label for="vol-name">Your Name</label>
+              <input type="text" id="vol-name" class="input" placeholder="Full name" required />
+            </div>
+            <div class="input-group">
+              <label for="vol-role">Your Role / Job Title</label>
+              <input type="text" id="vol-role" class="input" placeholder="e.g. Software Engineer" required />
+            </div>
+            <div class="input-group">
+              <label for="vol-expertise">Area of Expertise</label>
+              <input type="text" id="vol-expertise" class="input" placeholder="e.g. Tech, Healthcare, Legal" />
+            </div>
+            <div class="input-group">
+              <label for="vol-lang">Languages Spoken</label>
+              <input type="text" id="vol-lang" class="input" placeholder="e.g. English, Arabic" />
+            </div>
+          </div>
+          <div class="input-group mt-4">
+            <label for="vol-bio">Why do you want to mentor?</label>
+            <textarea id="vol-bio" class="input" rows="3" placeholder="Tell us a bit about yourself and why you'd like to volunteer..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--accent btn--lg mt-4" id="volunteer-submit-btn" style="width:100%;">
+            🙋 Apply to Become a Mentor
+          </button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><div class="navbar__logo"><span class="logo-icon">🗺️</span><span class="logo-text">OpportuMap</span></div><p>Free, always.</p></div>
+        <div class="footer__col"><h4>Navigation</h4><ul class="footer__links"><li><a href="jobs.html">Jobs</a></li><li><a href="resources.html">Resources</a></li><li><a href="stories.html">Stories</a></li></ul></div>
+        <div class="footer__col"><h4>Account</h4><ul class="footer__links"><li><a href="profile.html">My Profile</a></li></ul></div>
+        <div class="footer__col"><h4>Volunteer</h4><ul class="footer__links"><li><a href="#become-mentor">Become a Mentor</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>© 2026 OpportuMap · ImpactForge Hackathon</span><span>Made with ❤️</span></div>
+    </div>
+  </footer>
+
+  <script src="data/mentors.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/mentors.js"></script>
+</body>
+</html>

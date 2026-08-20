@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpportuMap — Find Jobs & Resources for Refugees & Displaced People</title>
+  <meta name="description" content="OpportuMap connects refugees, displaced persons, and people in economic hardship with jobs, resources, and mentors. Skill-matched opportunities, no barriers." />
+  <meta name="keywords" content="jobs for refugees, displaced persons employment, refugee resources, migrant jobs, humanitarian employment" />
+  <meta property="og:title" content="OpportuMap — Opportunity for Everyone" />
+  <meta property="og:description" content="Connecting displaced people with dignified work, essential resources, and mentors who care." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <div class="bg-mesh"></div>
+  <div id="toast-container"></div>
+
+  <!-- ─── Navigation ─────────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="OpportuMap home">
+        <span class="logo-icon">🗺️</span>
+        <span class="logo-text">OpportuMap</span>
+      </a>
+      <ul class="navbar__nav" id="mobile-nav" role="list">
+        <li><a href="jobs.html"      class="navbar__link" id="nav-jobs">Find Jobs</a></li>
+        <li><a href="resources.html" class="navbar__link" id="nav-resources">Resources</a></li>
+        <li><a href="mentors.html"   class="navbar__link" id="nav-mentors">Mentors</a></li>
+        <li><a href="stories.html"   class="navbar__link" id="nav-stories">Stories</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="profile.html" class="btn btn--outline btn--sm" id="nav-profile-btn">My Profile</a>
+        <a href="jobs.html" class="btn btn--primary btn--sm" id="nav-find-jobs-btn">Find Opportunities</a>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ───────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="hero-headline">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__badge animate-fade-up">
+          <span class="badge badge--accent">🌍 Open to All Countries</span>
+          <span class="badge badge--primary">No Gatekeeping</span>
+        </div>
+        <h1 id="hero-headline" class="hero__headline animate-fade-up delay-1">
+          Your skills deserve<br/>
+          <span class="hero__highlight">a real opportunity</span>
+        </h1>
+        <p class="hero__sub animate-fade-up delay-2">
+          OpportuMap connects refugees, displaced persons, and people in economic hardship
+          with jobs matched to your actual skills, vital local resources, and mentors who genuinely care.
+        </p>
+        <div class="hero__actions animate-fade-up delay-3">
+          <a href="jobs.html" class="btn btn--primary btn--lg" id="hero-find-jobs">
+            🔍 Find Opportunities
+          </a>
+          <a href="resources.html" class="btn btn--outline btn--lg" id="hero-find-resources">
+            📦 Explore Resources
+          </a>
+        </div>
+        <div class="hero__trust animate-fade-up delay-4">
+          <span>✓ Free, always</span>
+          <span>✓ No account required to browse</span>
+          <span>✓ Multilingual friendly</span>
+        </div>
+      </div>
+      <div class="hero__visual animate-fade-up delay-2">
+        <div class="hero__card-float" id="hero-float-card">
+          <div class="hero-stat-card">
+            <div class="hero-stat-card__icon">💼</div>
+            <div>
+              <div class="hero-stat-card__val">2,400+</div>
+              <div class="hero-stat-card__lbl">Jobs Listed</div>
+            </div>
+          </div>
+          <div class="hero-stat-card hero-stat-card--2">
+            <div class="hero-stat-card__icon">🤝</div>
+            <div>
+              <div class="hero-stat-card__val">870+</div>
+              <div class="hero-stat-card__lbl">Mentors Available</div>
+            </div>
+          </div>
+          <div class="hero-stat-card hero-stat-card--3">
+            <div class="hero-stat-card__icon">🌍</div>
+            <div>
+              <div class="hero-stat-card__val">42</div>
+              <div class="hero-stat-card__lbl">Countries Covered</div>
+            </div>
+          </div>
+          <div class="hero-globe">🗺️</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__wave">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="rgba(255,255,255,0.02)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ─── Stats ──────────────────────────────────────────────── -->
+  <section class="stats-section section" aria-label="Platform statistics">
+    <div class="container">
+      <div class="stats-grid" data-animate>
+        <div class="card stat-card" data-animate>
+          <div class="stat-value" data-count="2400" data-suffix="+">0</div>
+          <div class="stat-label">Jobs & Opportunities</div>
+        </div>
+        <div class="card stat-card" data-animate>
+          <div class="stat-value" data-count="14800" data-suffix="+">0</div>
+          <div class="stat-label">People Helped</div>
+        </div>
+        <div class="card stat-card" data-animate>
+          <div class="stat-value" data-count="870" data-suffix="+">0</div>
+          <div class="stat-label">Volunteer Mentors</div>
+        </div>
+        <div class="card stat-card" data-animate>
+          <div class="stat-value" data-count="42">0</div>
+          <div class="stat-label">Countries Covered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── How It Works ───────────────────────────────────────── -->
+  <section class="how-section section" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="text-center mb-5" data-animate>
+        <div class="section-label">How It Works</div>
+        <h2 id="how-heading" class="heading-lg">Three steps to your next opportunity</h2>
+        <p class="text-muted mt-3" style="max-width:520px; margin-inline:auto;">
+          We've removed every unnecessary barrier. No endless forms, no rejections, no judgment.
+        </p>
+      </div>
+      <div class="grid-3" style="gap: 32px;" data-animate>
+        <div class="how-step card" data-animate>
+          <div class="how-step__number">01</div>
+          <div class="how-step__icon">🧑‍💻</div>
+          <h3>Build Your Profile</h3>
+          <p class="text-muted text-sm mt-3">Tell us your skills, languages, and what kind of work you're looking for. No resume needed — just you.</p>
+          <a href="profile.html" class="btn btn--ghost btn--sm mt-4" id="step1-profile-link">Create Profile →</a>
+        </div>
+        <div class="how-step card how-step--featured" data-animate>
+          <div class="how-step__number">02</div>
+          <div class="how-step__icon">🔍</div>
+          <h3>Get Matched</h3>
+          <p class="text-muted text-sm mt-3">Our skill-matching system surfaces the most relevant jobs and resources based on what you actually know how to do.</p>
+          <a href="jobs.html" class="btn btn--primary btn--sm mt-4" id="step2-match-link">Browse Jobs →</a>
+        </div>
+        <div class="how-step card" data-animate>
+          <div class="how-step__number">03</div>
+          <div class="how-step__icon">🚀</div>
+          <h3>Get Support</h3>
+          <p class="text-muted text-sm mt-3">Connect with volunteer mentors, access local resources, and apply with confidence. We're with you every step.</p>
+          <a href="mentors.html" class="btn btn--ghost btn--sm mt-4" id="step3-mentor-link">Find a Mentor →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Featured Jobs ───────────────────────────────────────── -->
+  <section class="featured-jobs section" aria-labelledby="featured-jobs-heading">
+    <div class="container">
+      <div class="flex items-center justify-between mb-5" data-animate>
+        <div>
+          <div class="section-label">Opportunities</div>
+          <h2 id="featured-jobs-heading" class="heading-lg">Latest job listings</h2>
+        </div>
+        <a href="jobs.html" class="btn btn--outline" id="view-all-jobs-btn">View all jobs →</a>
+      </div>
+      <div class="grid-auto" id="featured-jobs-container" data-animate>
+        <!-- Populated by JS -->
+      </div>
+      <div class="text-center mt-5" data-animate>
+        <a href="jobs.html" class="btn btn--primary btn--lg" id="explore-all-jobs-btn">Explore All 22+ Jobs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Categories ─────────────────────────────────────────── -->
+  <section class="categories-section section" aria-labelledby="categories-heading">
+    <div class="container">
+      <div class="text-center mb-5" data-animate>
+        <div class="section-label">Browse By Field</div>
+        <h2 id="categories-heading" class="heading-lg">Find work in your area of expertise</h2>
+      </div>
+      <div class="categories-grid" data-animate>
+        <a href="jobs.html?category=Technology" class="category-card card" id="cat-technology">
+          <span class="category-card__icon">💻</span>
+          <span class="category-card__name">Technology</span>
+          <span class="category-card__count badge badge--primary">4 jobs</span>
+        </a>
+        <a href="jobs.html?category=Healthcare" class="category-card card" id="cat-healthcare">
+          <span class="category-card__icon">🏥</span>
+          <span class="category-card__name">Healthcare</span>
+          <span class="category-card__count badge badge--accent">3 jobs</span>
+        </a>
+        <a href="jobs.html?category=Education" class="category-card card" id="cat-education">
+          <span class="category-card__icon">📚</span>
+          <span class="category-card__name">Education</span>
+          <span class="category-card__count badge badge--primary">2 jobs</span>
+        </a>
+        <a href="jobs.html?category=Logistics" class="category-card card" id="cat-logistics">
+          <span class="category-card__icon">📦</span>
+          <span class="category-card__name">Logistics</span>
+          <span class="category-card__count badge badge--neutral">2 jobs</span>
+        </a>
+        <a href="jobs.html?category=Social Work" class="category-card card" id="cat-social">
+          <span class="category-card__icon">🌍</span>
+          <span class="category-card__name">Social Work</span>
+          <span class="category-card__count badge badge--accent">2 jobs</span>
+        </a>
+        <a href="jobs.html?category=Language" class="category-card card" id="cat-language">
+          <span class="category-card__icon">🗣️</span>
+          <span class="category-card__name">Language</span>
+          <span class="category-card__count badge badge--warn">1 job</span>
+        </a>
+        <a href="jobs.html?category=Creative" class="category-card card" id="cat-creative">
+          <span class="category-card__icon">🎨</span>
+          <span class="category-card__name">Creative</span>
+          <span class="category-card__count badge badge--primary">2 jobs</span>
+        </a>
+        <a href="jobs.html" class="category-card card category-card--more" id="cat-more">
+          <span class="category-card__icon">➕</span>
+          <span class="category-card__name">View All</span>
+          <span class="category-card__count badge badge--neutral">22+ jobs</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Resources Preview ──────────────────────────────────── -->
+  <section class="resources-preview section" aria-labelledby="resources-heading">
+    <div class="container">
+      <div class="resources-preview__inner">
+        <div class="resources-preview__text" data-animate>
+          <div class="section-label">Beyond Jobs</div>
+          <h2 id="resources-heading" class="heading-lg">Access vital resources in your area</h2>
+          <p class="text-muted mt-3">
+            Finding a job is one piece. We also connect you with food assistance, shelter, legal aid,
+            language classes, healthcare, and government support programs — all searchable by location.
+          </p>
+          <div class="resources-types mt-5">
+            <div class="resource-type-pill">🍽️ Food Assistance</div>
+            <div class="resource-type-pill">🏠 Shelter & Housing</div>
+            <div class="resource-type-pill">⚖️ Legal Aid</div>
+            <div class="resource-type-pill">🗣️ Language Classes</div>
+            <div class="resource-type-pill">🏥 Healthcare</div>
+            <div class="resource-type-pill">📋 Government Programs</div>
+          </div>
+          <a href="resources.html" class="btn btn--accent btn--lg mt-5" id="hero-resources-link">
+            Explore Resources →
+          </a>
+        </div>
+        <div class="resources-preview__card card" data-animate>
+          <div class="resource-card-preview">
+            <div class="rcp-header">
+              <span class="badge badge--accent">📍 Berlin, Germany</span>
+              <span class="badge badge--neutral">50+ Resources</span>
+            </div>
+            <div class="rcp-list">
+              <div class="rcp-item">
+                <span class="rcp-icon">🍽️</span>
+                <div>
+                  <div class="font-semibold text-sm">Berlin Food Bank</div>
+                  <div class="text-faint text-xs">Mon–Fri, 9am–5pm · Mitte district</div>
+                </div>
+                <span class="badge badge--accent" style="margin-left:auto;">Open</span>
+              </div>
+              <div class="rcp-item">
+                <span class="rcp-icon">⚖️</span>
+                <div>
+                  <div class="font-semibold text-sm">Refugee Legal Aid Clinic</div>
+                  <div class="text-faint text-xs">Free consultations · Wed & Fri</div>
+                </div>
+                <span class="badge badge--accent" style="margin-left:auto;">Free</span>
+              </div>
+              <div class="rcp-item">
+                <span class="rcp-icon">🗣️</span>
+                <div>
+                  <div class="font-semibold text-sm">German for Newcomers</div>
+                  <div class="text-faint text-xs">A1–B2 · Online + in-person</div>
+                </div>
+                <span class="badge badge--primary" style="margin-left:auto;">Enrolling</span>
+              </div>
+              <div class="rcp-item">
+                <span class="rcp-icon">🏠</span>
+                <div>
+                  <div class="font-semibold text-sm">Emergency Housing Support</div>
+                  <div class="text-faint text-xs">24/7 hotline available</div>
+                </div>
+                <span class="badge badge--warn" style="margin-left:auto;">Urgent</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Mentor Teaser ──────────────────────────────────────── -->
+  <section class="mentor-teaser section" aria-labelledby="mentor-heading">
+    <div class="container text-center">
+      <div class="section-label" data-animate>Human Connection</div>
+      <h2 id="mentor-heading" class="heading-lg" data-animate>You don't have to navigate this alone</h2>
+      <p class="text-muted mt-3" style="max-width:560px; margin-inline:auto;" data-animate>
+        Our volunteer mentors are professionals who've donated their time specifically to help people like you.
+        Connect for career guidance, interview prep, or just a human conversation.
+      </p>
+      <div class="mentor-avatars-row mt-5" data-animate>
+        <div class="mentor-avatar-bubble" style="background: linear-gradient(135deg,#7C6FFF,#9b8fff);">SA</div>
+        <div class="mentor-avatar-bubble" style="background: linear-gradient(135deg,#00D4AA,#00f5c7);">MK</div>
+        <div class="mentor-avatar-bubble" style="background: linear-gradient(135deg,#FF6B6B,#ff9090);">JL</div>
+        <div class="mentor-avatar-bubble" style="background: linear-gradient(135deg,#FFD700,#ffe566);">AR</div>
+        <div class="mentor-avatar-bubble" style="background: linear-gradient(135deg,#7C6FFF,#c9c0ff);">FN</div>
+        <div class="mentor-count-bubble">+865</div>
+      </div>
+      <a href="mentors.html" class="btn btn--primary btn--lg mt-5" id="find-mentor-btn">Find Your Mentor →</a>
+    </div>
+  </section>
+
+  <!-- ─── Story Teaser ──────────────────────────────────────────── -->
+  <section class="story-teaser section" aria-labelledby="stories-heading">
+    <div class="container">
+      <div class="flex items-center justify-between mb-5" data-animate>
+        <div>
+          <div class="section-label">Real People</div>
+          <h2 id="stories-heading" class="heading-lg">Stories of real change</h2>
+        </div>
+        <a href="stories.html" class="btn btn--outline" id="view-all-stories-btn">Read all stories →</a>
+      </div>
+      <div class="grid-3" data-animate>
+        <div class="story-card card" data-animate>
+          <div class="story-card__quote">"</div>
+          <p class="story-card__text">
+            "I came to Germany with 8 years of nursing experience and couldn't find work. OpportuMap connected me with EuroHealth and guided me through credential recognition. I start work next month."
+          </p>
+          <div class="story-card__author">
+            <div class="avatar avatar--sm" style="background: linear-gradient(135deg,#FF6B6B,#ff9090);">FZ</div>
+            <div>
+              <div class="font-semibold text-sm">Fatima Z.</div>
+              <div class="text-faint text-xs">Nurse · Damascus → Vienna</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-card card" data-animate>
+          <div class="story-card__quote">"</div>
+          <p class="story-card__text">
+            "I had JavaScript skills but no local network. Found a remote role through OpportuMap in my first week. My team is incredible and I work from anywhere."
+          </p>
+          <div class="story-card__author">
+            <div class="avatar avatar--sm" style="background: linear-gradient(135deg,#7C6FFF,#9b8fff);">KA</div>
+            <div>
+              <div class="font-semibold text-sm">Karim A.</div>
+              <div class="text-faint text-xs">Dev · Aleppo → Remote</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-card card" data-animate>
+          <div class="story-card__quote">"</div>
+          <p class="story-card__text">
+            "The resource directory found me emergency housing and a food bank within an hour. Then my mentor helped me land a job interview the next week. This platform is different."
+          </p>
+          <div class="story-card__author">
+            <div class="avatar avatar--sm" style="background: linear-gradient(135deg,#00D4AA,#00f5c7);">MM</div>
+            <div>
+              <div class="font-semibold text-sm">Maria M.</div>
+              <div class="text-faint text-xs">Social Worker · Kyiv → Toronto</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA Section ────────────────────────────────────────── -->
+  <section class="cta-section section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-inner card" data-animate>
+        <div class="cta-inner__bg"></div>
+        <div class="cta-inner__content">
+          <h2 id="cta-heading" class="heading-lg">Ready to start?</h2>
+          <p class="text-muted mt-3">
+            No account required to browse. Create a free profile to save jobs, track applications, and connect with mentors.
+          </p>
+          <div class="flex gap-4 justify-center wrap mt-5">
+            <a href="jobs.html" class="btn btn--primary btn--lg" id="cta-browse-jobs">Browse Jobs Now</a>
+            <a href="profile.html" class="btn btn--outline btn--lg" id="cta-create-profile">Create Free Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="navbar__logo">
+            <span class="logo-icon">🗺️</span>
+            <span class="logo-text">OpportuMap</span>
+          </div>
+          <p>Connecting displaced people with dignified work, essential resources, and mentors who care. Free, always.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Opportunities</h4>
+          <ul class="footer__links">
+            <li><a href="jobs.html">Find Jobs</a></li>
+            <li><a href="jobs.html?mode=Remote">Remote Work</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <ul class="footer__links">
+            <li><a href="mentors.html">Find Mentors</a></li>
+            <li><a href="stories.html">Success Stories</a></li>
+            <li><a href="mentors.html#become-mentor">Volunteer</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Account</h4>
+          <ul class="footer__links">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="profile.html#saved">Saved Jobs</a></li>
+            <li><a href="profile.html#tracker">Applications</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 OpportuMap · Built for ImpactForge Hackathon</span>
+        <span>Made with ❤️ for people who deserve better</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/jobs.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Render featured jobs (first 6)
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('featured-jobs-container');
+      if (!container || typeof JOBS_DATA === 'undefined') return;
+
+      JOBS_DATA.slice(0, 6).forEach((job, i) => {
+        const saved = isJobSaved(job.id);
+        const card = document.createElement('div');
+        card.className = 'card job-mini-card';
+        card.style.animationDelay = `${i * 0.08}s`;
+        card.innerHTML = `
+          <div class="job-mini-card__header">
+            <div class="job-mini-icon" style="background: ${job.color}22; border: 1px solid ${job.color}44;">${job.logo}</div>
+            <div style="flex:1; min-width:0;">
+              <div class="font-semibold" style="font-size:0.95rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${job.title}</div>
+              <div class="text-muted text-sm">${job.company}</div>
+            </div>
+            <button class="save-btn ${saved ? 'saved' : ''}" data-id="${job.id}" aria-label="${saved ? 'Unsave' : 'Save'} job" title="${saved ? 'Saved' : 'Save job'}">
+              ${saved ? '★' : '☆'}
+            </button>
+          </div>
+          <div class="flex gap-2 wrap mt-3">
+            <span class="badge badge--neutral">📍 ${job.location}</span>
+            <span class="badge badge--neutral">${job.type}</span>
+            ${job.urgent ? '<span class="badge badge--warn">🔥 Urgent</span>' : ''}
+          </div>
+          <div class="flex gap-2 wrap mt-2">
+            ${job.skills.slice(0,3).map(s => `<span class="skill-tag">${s}</span>`).join('')}
+          </div>
+          <div class="job-mini-card__footer mt-3">
+            <span class="text-accent font-semibold text-sm">${job.salary}</span>
+            <a href="jobs.html" class="btn btn--ghost btn--sm" id="apply-${job.id}">View →</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      // Save toggle
+      container.addEventListener('click', e => {
+        const btn = e.target.closest('.save-btn');
+        if (!btn) return;
+        const id = btn.dataset.id;
+        const nowSaved = toggleSaveJob(id);
+        btn.textContent = nowSaved ? '★' : '☆';
+        btn.classList.toggle('saved', nowSaved);
+      });
+    });
+  </script>
+</body>
+</html>

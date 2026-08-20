@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile — OpportuMap</title>
+  <meta name="description" content="Build your profile, track job applications, and manage saved jobs on OpportuMap." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+  <div class="bg-mesh"></div>
+  <div id="toast-container"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="OpportuMap home">
+        <span class="logo-icon">🗺️</span>
+        <span class="logo-text">OpportuMap</span>
+      </a>
+      <ul class="navbar__nav" id="mobile-nav" role="list">
+        <li><a href="jobs.html"      class="navbar__link" id="nav-jobs">Find Jobs</a></li>
+        <li><a href="resources.html" class="navbar__link" id="nav-resources">Resources</a></li>
+        <li><a href="mentors.html"   class="navbar__link" id="nav-mentors">Mentors</a></li>
+        <li><a href="stories.html"   class="navbar__link" id="nav-stories">Stories</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="profile.html" class="btn btn--primary btn--sm active" id="nav-profile-btn">My Profile</a>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 90px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="profile-layout">
+
+        <!-- ── Sidebar ── -->
+        <aside class="profile-sidebar">
+          <div class="card profile-card">
+            <div class="profile-avatar-wrap">
+              <div class="avatar avatar--lg" id="profile-avatar-display">?</div>
+              <div class="profile-avatar-glow"></div>
+            </div>
+            <div class="profile-name" id="profile-name-display">Your Name</div>
+            <div class="text-muted text-sm" id="profile-location-display">Location not set</div>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat__val" id="stat-saved">0</div>
+                <div class="profile-stat__lbl">Saved</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat__val" id="stat-applied">0</div>
+                <div class="profile-stat__lbl">Applied</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat__val" id="stat-skills">0</div>
+                <div class="profile-stat__lbl">Skills</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Nav -->
+          <nav class="profile-nav card" aria-label="Profile sections">
+            <button class="profile-nav-btn active" data-tab="edit" id="tab-edit">✏️ Edit Profile</button>
+            <button class="profile-nav-btn" data-tab="saved" id="tab-saved">★ Saved Jobs</button>
+            <button class="profile-nav-btn" data-tab="tracker" id="tab-tracker">📋 Applications</button>
+          </nav>
+        </aside>
+
+        <!-- ── Main Content ── -->
+        <div class="profile-content">
+
+          <!-- Edit Profile Tab -->
+          <section class="profile-tab active" id="tab-content-edit" aria-label="Edit profile">
+            <div class="card" style="padding: 32px;">
+              <h1 class="heading-md mb-5">Build Your Profile</h1>
+              <form id="profile-form" novalidate>
+                <div class="grid-2 gap-5">
+                  <div class="input-group">
+                    <label for="input-name">Full Name</label>
+                    <input type="text" id="input-name" class="input" placeholder="Your name" autocomplete="name" />
+                  </div>
+                  <div class="input-group">
+                    <label for="input-location">Location</label>
+                    <input type="text" id="input-location" class="input" placeholder="City, Country" />
+                  </div>
+                  <div class="input-group">
+                    <label for="input-email">Email</label>
+                    <input type="email" id="input-email" class="input" placeholder="you@example.com" autocomplete="email" />
+                  </div>
+                  <div class="input-group">
+                    <label for="input-phone">Phone (Optional)</label>
+                    <input type="tel" id="input-phone" class="input" placeholder="+1 234 567 8900" autocomplete="tel" />
+                  </div>
+                </div>
+
+                <div class="input-group mt-5">
+                  <label for="input-bio">About You</label>
+                  <textarea id="input-bio" class="input" rows="4" placeholder="Tell employers about yourself — your experience, what you're looking for, and what makes you unique..."></textarea>
+                </div>
+
+                <div class="input-group mt-5">
+                  <label>Languages You Speak</label>
+                  <div class="languages-grid" id="language-grid">
+                    <label class="checkbox-wrap" for="lang-english"><input type="checkbox" id="lang-english" value="English"> English</label>
+                    <label class="checkbox-wrap" for="lang-arabic"><input type="checkbox" id="lang-arabic" value="Arabic"> Arabic</label>
+                    <label class="checkbox-wrap" for="lang-french"><input type="checkbox" id="lang-french" value="French"> French</label>
+                    <label class="checkbox-wrap" for="lang-german"><input type="checkbox" id="lang-german" value="German"> German</label>
+                    <label class="checkbox-wrap" for="lang-spanish"><input type="checkbox" id="lang-spanish" value="Spanish"> Spanish</label>
+                    <label class="checkbox-wrap" for="lang-farsi"><input type="checkbox" id="lang-farsi" value="Farsi"> Farsi</label>
+                    <label class="checkbox-wrap" for="lang-dari"><input type="checkbox" id="lang-dari" value="Dari"> Dari</label>
+                    <label class="checkbox-wrap" for="lang-somali"><input type="checkbox" id="lang-somali" value="Somali"> Somali</label>
+                    <label class="checkbox-wrap" for="lang-ukrainian"><input type="checkbox" id="lang-ukrainian" value="Ukrainian"> Ukrainian</label>
+                    <label class="checkbox-wrap" for="lang-swahili"><input type="checkbox" id="lang-swahili" value="Swahili"> Swahili</label>
+                    <label class="checkbox-wrap" for="lang-portuguese"><input type="checkbox" id="lang-portuguese" value="Portuguese"> Portuguese</label>
+                    <label class="checkbox-wrap" for="lang-turkish"><input type="checkbox" id="lang-turkish" value="Turkish"> Turkish</label>
+                  </div>
+                </div>
+
+                <div class="input-group mt-5">
+                  <label>Your Skills</label>
+                  <p class="text-faint text-xs mb-3">Select all skills you have — we'll use these to match you with relevant jobs</p>
+                  <div class="skills-picker" id="skills-picker">
+                    <!-- Populated by JS -->
+                  </div>
+                </div>
+
+                <div class="grid-2 gap-5 mt-5">
+                  <div class="input-group">
+                    <label for="input-experience">Experience Level</label>
+                    <select id="input-experience" class="input">
+                      <option value="">Select level</option>
+                      <option value="No experience">No experience</option>
+                      <option value="Entry level (0-2 years)">Entry level (0–2 years)</option>
+                      <option value="Mid level (2-5 years)">Mid level (2–5 years)</option>
+                      <option value="Senior (5+ years)">Senior (5+ years)</option>
+                    </select>
+                  </div>
+                  <div class="input-group">
+                    <label for="input-worktype">Preferred Work Type</label>
+                    <select id="input-worktype" class="input">
+                      <option value="">Any</option>
+                      <option value="Full-time">Full-time</option>
+                      <option value="Part-time">Part-time</option>
+                      <option value="Remote">Remote only</option>
+                      <option value="Freelance">Freelance / Contract</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="input-group mt-5">
+                  <label for="input-linkedin">LinkedIn / Portfolio URL (Optional)</label>
+                  <input type="url" id="input-linkedin" class="input" placeholder="https://linkedin.com/in/yourname" />
+                </div>
+
+                <button type="submit" class="btn btn--primary btn--lg mt-5" id="save-profile-btn" style="width:100%;">
+                  💾 Save Profile
+                </button>
+              </form>
+            </div>
+          </section>
+
+          <!-- Saved Jobs Tab -->
+          <section class="profile-tab" id="tab-content-saved" aria-label="Saved jobs">
+            <div class="card" style="padding: 32px;">
+              <h2 class="heading-md mb-5">★ Saved Jobs</h2>
+              <div id="saved-jobs-list">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </section>
+
+          <!-- Application Tracker Tab -->
+          <section class="profile-tab" id="tab-content-tracker" aria-label="Application tracker">
+            <div class="card" style="padding: 32px;">
+              <h2 class="heading-md mb-3">📋 Application Tracker</h2>
+              <p class="text-muted text-sm mb-5">Track the status of every job you've applied to.</p>
+              <div id="applications-list">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="navbar__logo">
+            <span class="logo-icon">🧭</span>
+            <span class="logo-text">OpportuMap</span>
+          </div>
+          <p>Connecting displaced people with dignified work, essential resources, and mentors who care. Free, always.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Opportunities</h4>
+          <ul class="footer__links">
+            <li><a href="jobs.html">Find Jobs</a></li>
+            <li><a href="jobs.html?mode=Remote">Remote Work</a></li>
+            <li><a href="resources.html">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <ul class="footer__links">
+            <li><a href="mentors.html">Find Mentors</a></li>
+            <li><a href="stories.html">Success Stories</a></li>
+            <li><a href="mentors.html#become-mentor">Volunteer</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Account</h4>
+          <ul class="footer__links">
+            <li><a href="profile.html">My Profile</a></li>
+            <li><a href="profile.html#saved">Saved Jobs</a></li>
+            <li><a href="profile.html#tracker">Applications</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 OpportuMap &mdash; Built for ImpactForge Hackathon</span>
+        <span>Made with ❤️ for people who deserve better</span>
+      </div>
+    </div>
+  </footer>
+  <script src="data/jobs.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>
